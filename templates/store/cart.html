@@ -1,0 +1,43 @@
+{% extends 'store/main.html' %}
+{% block content %}
+
+<div class="container">
+  <h2>{{user.username}}</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product name</th>
+        <th>Price</th>
+          <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for ord in ords %}
+      <tr>
+        <td>{{ ord.product.product_name }}</td>
+        <td>{{ ord.product.price }}</td>
+        <td id="ord_count">{{ ord.quantity }}
+        <div class="btn-group-vertical update-details" >
+            <button data-product ='{{ord.product.id}}' data-action="add" type="button" class="btn btn-primary update-details">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg>
+            </button>
+            <button data-product ='{{ord.product.id}}' data-action="remove" type="button" class="btn btn-primary update-details">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg>
+            </button>
+    </div></td>
+      </tr>
+    {% endfor %}
+    <tr>
+        <td><b>Jami:</b></td>
+        <td>{{ summ }}</td>
+        <td>{{ quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

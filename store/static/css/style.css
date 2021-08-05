@@ -1,0 +1,12 @@
+.panel{
+	padding: 5px;
+	margin:10px;
+	box-shadow: 0px 0px 4px 5px gray;
+}
+.pr{
+	float: left;
+}
+.more{
+
+	margin-left: auto;
+}

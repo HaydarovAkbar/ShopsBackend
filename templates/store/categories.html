@@ -1,0 +1,13 @@
+{% extends 'store/main.html' %}
+{% block content %}
+
+{% for cat in cat_list %}
+    <div class="card" style="width:400px">
+    <div class="card-body">
+      <h4 class="card-title">{{ cat.category_name }}</h4>
+      <p class="card-text">{{ cat.description }}</p>
+      <a href="{{cat.id}}" class="btn btn-primary">more...</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

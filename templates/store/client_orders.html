@@ -1,0 +1,13 @@
+{% extends 'store/main.html' %}
+{% block content %}
+<div class="row">
+	{% for customer in customers %}
+	<div class="col-md-3 panel">
+		<h3>{{customer.user.username}}</h3>
+		<h4>{{customer.user.first_name}} {{customer.user.last_name}}</h4>
+		<h3 class="pr">$ {{datas}}</h3>
+		<a class="justify-content-end" style="background-color: green;" href="{{customer.id}}"><h4>more</h4></a>
+	</div>
+	{% endfor %}
+</div>
+{% endblock content %}

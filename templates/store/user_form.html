@@ -1,0 +1,12 @@
+{% extends 'store/main.html' %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+
+    <input type="submit" value="send">
+    <a href = "{% url 'user' %}">Regestratsiya</a>
+</form>
+{% endblock content %}

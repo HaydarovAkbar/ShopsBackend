@@ -1,0 +1,13 @@
+{% extends 'store/main.html' %}
+{% block content %}
+{% for pd in pd_list %}
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="{{pd.imageURL}}" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{ pd.product_name }}</h4>
+      <p class="card-text">{{ pd.price }} $</p>
+      <button data-product ='{{pd.id}}' data-action="add" class="btn btn-primary update-details">BUY</button>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
